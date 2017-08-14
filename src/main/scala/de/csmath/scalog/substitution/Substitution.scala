@@ -1,4 +1,4 @@
-package de.csmath.scalog.Substitution
+package de.csmath.scalog.substitution
 
 import de.csmath.scalog.Types.{Term, Var}
 import de.csmath.scalog.AstToProlog._

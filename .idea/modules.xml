@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/scalog.iml" filepath="$PROJECT_DIR$/.idea/scalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/scalog-build.iml" filepath="$PROJECT_DIR$/.idea/modules/scalog-build.iml" />
     </modules>
   </component>
 </project>
