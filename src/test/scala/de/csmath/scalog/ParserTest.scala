@@ -103,7 +103,7 @@ class ParserTest extends FlatSpec with Matchers {
 
     parser.parse(parser.clause,fact1).getOrElse(nothing) shouldBe expFact1
     parser.parse(parser.clause,fact2).getOrElse(nothing) shouldBe expFact2
-    
+
 
   }
 
