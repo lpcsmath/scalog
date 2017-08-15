@@ -21,6 +21,7 @@ class ParserTest extends FlatSpec with Matchers {
     val var5 = "hallo"
     val var6 = "Ha%$o"
     val var7 = "%$"
+    val var8 = "X]"
 
     parser.parse(parser.term,var1).getOrElse(nothing) shouldBe Var(var1)
     parser.parse(parser.term,var2).getOrElse(nothing) shouldBe Var(var2)
@@ -29,6 +30,7 @@ class ParserTest extends FlatSpec with Matchers {
     parser.parse(parser.term,var5).getOrElse(nothing) shouldBe Atom(var5)
     parser.parse(parser.term,var6).getOrElse(nothing) shouldBe Var("Ha")
     parser.parse(parser.term,var7).getOrElse(nothing) shouldBe nothing
+    parser.parse(parser.term,var8).getOrElse(nothing) shouldBe Var(var1)
 
     transBack(parser.parse(parser.term,var1).getOrElse(nothing)) shouldBe var1
 
@@ -83,12 +85,15 @@ class ParserTest extends FlatSpec with Matchers {
     val expList3 = expList2
     val list4 = "[1,2|[3]]"
     val expList4 = expList2
+    val list5 = "[X|Y]"
+    val expList5 = PlCons(Var("X"),Var("Y"))
 
     parser.parse(parser.term,list0).getOrElse(nothing) shouldBe expList0
     parser.parse(parser.term,list1).getOrElse(nothing) shouldBe expList1
     parser.parse(parser.term,list2).getOrElse(nothing) shouldBe expList2
     parser.parse(parser.term,list3).getOrElse(nothing) shouldBe expList3
     parser.parse(parser.term,list4).getOrElse(nothing) shouldBe expList4
+    parser.parse(parser.term,list5).getOrElse(nothing) shouldBe expList5
 
     transBack(parser.parse(parser.term,list0).getOrElse(nothing)) shouldBe list0
     transBack(parser.parse(parser.term,list4).getOrElse(nothing)) shouldBe list2
@@ -103,8 +108,20 @@ class ParserTest extends FlatSpec with Matchers {
 
     parser.parse(parser.clause,fact1).getOrElse(nothing) shouldBe expFact1
     parser.parse(parser.clause,fact2).getOrElse(nothing) shouldBe expFact2
+    transBack(parser.parse(parser.clause,fact2).getOrElse(nothing)) shouldBe fact2
 
+  }
 
+  it should "parse rules" in {
+    val pred1 = "abc(X,Y,[U|W])"
+    val expPred1 = Struct(Atom("abc"),List(Var("X"),Var("Y"),PlCons(Var("U"),Var("W"))))
+    val pred2 = "xyz(bingo,Y)"
+    val expPred2 = Struct(Atom("xyz"),List(Atom("bingo"),Var("Y")))
+    val rule1 = pred1 + " :- " + pred2 + "," + pred1 + "."
+    val expRule1 = Clause(expPred1,List(expPred2,expPred1))
+
+    parser.parse(parser.clause,rule1).getOrElse(nothing) shouldBe expRule1
+    transBack(parser.parse(parser.clause,rule1).getOrElse(nothing)) shouldBe rule1
   }
 
 }

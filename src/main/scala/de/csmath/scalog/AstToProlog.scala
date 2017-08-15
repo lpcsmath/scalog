@@ -21,6 +21,7 @@ object AstToProlog {
 
   private def elems(list: PlList): String = list match {
     case PlNil => ""
+    case PlCons(x,Var(y)) => transBack(x) + "|" + y
     case PlCons(x,PlNil) => transBack(x)
     case PlCons(x,y) => transBack(x) + "," + elems(y)
   }

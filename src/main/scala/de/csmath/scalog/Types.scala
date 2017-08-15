@@ -5,7 +5,7 @@ object Types {
   sealed trait PrologType
 
   trait Term extends PrologType
-  case class Var(name: String) extends Term
+  case class Var(name: String) extends Term with PlList
   case class Atom(name: String) extends Term
   trait Const extends Term
   case class ConstInt(value: Int) extends Const

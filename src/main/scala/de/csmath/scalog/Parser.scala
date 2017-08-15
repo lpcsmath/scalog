@@ -10,11 +10,11 @@ class Parser extends RegexParsers {
 
   def clause = fact | rule
 
-  def variable = """[A-Z_][A-z\d_]*""".r ^^ {
+  def variable = """[A-Z_][A-Za-z\d_]*""".r ^^ {
     case v => Var(v)
   }
 
-  def atom = """([a-z][A-z\d_]*)""".r ^^ {
+  def atom = """([a-z][A-Za-z\d_]*)""".r ^^ {
     case a => Atom(a)
   }
 
@@ -37,16 +37,18 @@ class Parser extends RegexParsers {
     case emptyList => PlNil
   }
 
-  def dotList: Parser[PlList] = nil | dotCons
+  def dotList: Parser[PlList] = nil | dotCons | variable
 
   def dotCons = ".(" ~> term ~ "," ~ dotList <~ ")" ^^ {
     case hd ~ "," ~ tail => PlCons(hd,tail)
   }
 
-  def squareList: Parser[PlList] = nil | squareCons
+  def squareList: Parser[PlList] = nil | squareCons | variable
 
   def squareTail: Parser[PlList] = "|" ~> squareList ^^ {
-    case list => list
+    case PlNil => PlNil
+    case list@PlCons(_,_) => list
+    case aVar@Var(_) => aVar
   }
 
   def squareCons = "[" ~> repsep(term,",") ~ opt(squareTail) <~ "]" ^^ {
