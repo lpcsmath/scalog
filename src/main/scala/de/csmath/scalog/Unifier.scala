@@ -6,18 +6,29 @@ import de.csmath.scalog.substitution.Substitution
 object Unifier {
 
   def apply(t1: Term, t2: Term): Option[Substitution] = t1 match {
-    case v@Var(x) if t1 == t2 =>
+    case Var(_) if t1 == t2 =>
       Some(Substitution())
+    case Var(x) if t2.isInstanceOf[Var] =>
+      Some(Substitution(Map(Var(x) -> t2)))
     case v@Var(x) if notOccurs(v,t2) =>
       Some(Substitution(Map(Var(x) -> t2)))
     case x if t2.isInstanceOf[Var] && notOccurs(t2.asInstanceOf[Var],t1) =>
       Some(Substitution(Map(t2.asInstanceOf[Var] -> t1)))
     case _: Const if t1 == t2 =>
       Some(Substitution())
+    case PlNil if t1 == t2 =>
+      Some(Substitution())
     case Struct(f1,elems1) =>
       t2 match {
         case Struct(f2,elems2) if f1 == f2 && elems1.size == elems2.size =>
           apply(elems1,elems2)
+        case _ =>
+          None
+      }
+    case PlCons(head1,tail1) =>
+      t2 match {
+        case PlCons(head2,tail2) =>
+          apply(List(head1,tail1),List(head2,tail2))
         case _ =>
           None
       }

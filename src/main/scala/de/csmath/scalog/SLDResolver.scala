@@ -47,7 +47,10 @@ class SLDResolver {
 
   private def varsOfTerm(term: Term): List[Var] = term match {
     case v@Var(_) => List(v)
-    case s@Struct(_,terms) => terms.flatMap(varsOfTerm)
+    case s@Struct(_,terms) =>
+      terms.flatMap(varsOfTerm)
+    case PlCons(head,tail) =>
+      varsOfTerm(head) ++ varsOfTerm(tail)
     case _ => Nil
   }
 

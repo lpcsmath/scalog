@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a4b594-ca94-45c3-9008-afcc7b0cd688" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala" afterPath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala" afterPath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" afterPath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala" afterPath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,8 +57,8 @@
       <file leaf-file-name="Parser.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+            <state relative-caret-position="102">
+              <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding>
                 <element signature="e#26#57#0" expanded="true" />
               </folding>
@@ -68,8 +69,8 @@
       <file leaf-file-name="SLDResolver.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+            <state relative-caret-position="-240">
+              <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
               <folding>
                 <element signature="e#26#57#0" expanded="true" />
               </folding>
@@ -77,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SLDResolverTest.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SLDResolverTest.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="68" column="30" lean-forward="false" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+            <state relative-caret-position="156">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#26#57#0" expanded="true" />
               </folding>
@@ -89,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -130,8 +131,8 @@
       <file leaf-file-name="Unifier.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="121">
+              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <element signature="e#26#57#0" expanded="true" />
               </folding>
@@ -142,10 +143,10 @@
       <file leaf-file-name="Substitution.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="-140">
+              <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding>
-                <element signature="e#39#88#0" expanded="true" />
+                <element signature="e#39#70#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,15 +189,15 @@
         <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/substitution/SubstitutionTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Types.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/HashMapSubstitution.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala" />
       </list>
     </option>
   </component>
@@ -554,44 +555,44 @@
       <option name="presentableId" value="Default" />
       <updated>1502734047534</updated>
       <workItem from="1502734049322" duration="3450000" />
-      <workItem from="1502737641892" duration="36847000" />
+      <workItem from="1502737641892" duration="40867000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 06m 31s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 36m 17s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 16m 39s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 36m 24s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 16m 45s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 41m 19s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 20m 37s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 41m 25s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 21m 30s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 43m 18s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 24m 20s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 50m 06s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 16h 24m 33s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 54m 19s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 17h 10m 00s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 57m 44s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 17h 17m 47s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 58m 17s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.15 at 17h 20m 01s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.15 at 20h 59m 43s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40297000" />
+    <option name="totallyTimeSpent" value="44317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,7 +617,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5049261" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32994923" sideWeight="0.49507388" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32994923" sideWeight="0.49507388" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -678,12 +679,31 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala</url>
-          <line>55</line>
+          <url>file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala</url>
+          <line>77</line>
           <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala</url>
+          <line>8</line>
+          <properties />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -766,62 +786,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="e#26#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="e#39#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/HashMapSubstitution.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding>
             <element signature="e#39#80#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="e#26#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="68" column="30" lean-forward="false" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
-          <folding>
-            <element signature="e#26#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
-          <folding>
-            <element signature="e#26#57#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -847,6 +817,56 @@
             </folding>
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
+          <folding>
+            <element signature="e#26#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="e#26#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding>
+            <element signature="e#26#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

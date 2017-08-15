@@ -1,6 +1,6 @@
 package de.csmath.scalog.substitution
 
-import de.csmath.scalog.Types.{Struct, Term, Var}
+import de.csmath.scalog.Types._
 import de.csmath.scalog.AstToProlog._
 
 import scala.collection.immutable.HashMap
@@ -12,6 +12,8 @@ trait Substitution {
       mapping(v)
     case s@Struct(functor,terms) =>
       Struct(functor,terms.map(apply))
+    case PlCons(head,tail) =>
+      PlCons(apply(head),subList(tail))
     case y => y
   }
 
@@ -19,6 +21,8 @@ trait Substitution {
 
   def subPred(predicate: Struct): Struct = apply(predicate).asInstanceOf[Struct]
   def subPred(predicates: List[Struct]): List[Struct] = predicates map subPred
+
+  def subList(list: PlList): PlList = apply(list).asInstanceOf[PlList]
 
   def compose(other: Substitution): Substitution
 
