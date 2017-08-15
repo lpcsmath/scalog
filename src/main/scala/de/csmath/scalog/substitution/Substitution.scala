@@ -34,8 +34,8 @@ trait Substitution {
 
 object Substitution {
 
-  def apply() = new HashMapSubstitution
+  def apply(): Substitution = new HashMapSubstitution
 
-  def apply(aMap: Map[Var,Term]) = new HashMapSubstitution(HashMap.empty ++ aMap)
+  def apply(aMap: Map[Var,Term]): Substitution = new HashMapSubstitution(HashMap.empty ++ aMap)
 
 }

@@ -3,7 +3,9 @@ package de.csmath.scalog
 import de.csmath.scalog.Types._
 import de.csmath.scalog.substitution.Substitution
 
-object SLDResolver {
+class SLDResolver {
+
+  var renNum = 10
 
   def resolve(query: Query, numAnswers: Int)(implicit db: List[Clause]): List[Substitution] = {
     val substitutions = resolveAux(query,db,numAnswers)(db,Substitution())
@@ -30,15 +32,29 @@ object SLDResolver {
       }
   }
 
-  private def renameVars(clause: Clause): Clause = clause //TODO rename vars
+  private def renameVars(clause: Clause): Clause = {
+    val vars1 = varsOfTerm(clause.head)
+    val vars2 = clause.body.flatMap(varsOfTerm)
+    val allVars = vars1.toSet ++ vars2
+    val mapping = allVars.map(v => (v, Var(v.name + "_" + renNum))).toMap[Var,Term]
+    renNum += 1
+    val sub = Substitution(mapping)
+    Clause(sub.subPred(clause.head),sub.subPred(clause.body))
+  }
 
   private def varsOfQuery(query: Query): Set[Var] =
-    query.predicates.flatMap(_.terms).flatMap(varsOfStruct).toSet
+    query.predicates.flatMap(_.terms).flatMap(varsOfTerm).toSet
 
-  private def varsOfStruct(term: Term): List[Var] = term match {
+  private def varsOfTerm(term: Term): List[Var] = term match {
     case v@Var(_) => List(v)
-    case s@Struct(_,terms) => terms.flatMap(varsOfStruct)
+    case s@Struct(_,terms) => terms.flatMap(varsOfTerm)
     case _ => Nil
   }
+
+}
+
+object SLDResolver {
+
+  def apply(): SLDResolver = new SLDResolver()
 
 }

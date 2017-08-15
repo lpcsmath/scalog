@@ -8,9 +8,7 @@ class HashMapSubstitution(hashMap: Map[Var,Term] = HashMap.empty) extends Substi
 
   def compose(other: Substitution) = {
     val othermap = other.mapping.map {
-      case (k,Var(x)) if (hashMap.contains(Var(x))) =>
-       (k,hashMap(Var(x)))
-      case other => other
+      case (v,term) => (v,apply(term))
     }
     new HashMapSubstitution(hashMap ++ othermap)
   }
