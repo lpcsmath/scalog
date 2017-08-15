@@ -12,6 +12,8 @@ class Parser extends RegexParsers {
 
   def clause = fact | rule
 
+  def database = rep(clause)
+
   def variable = """[A-Z_]\w*""".r ^^ {
     case v => Var(v)
   }

@@ -15,6 +15,11 @@ trait Substitution {
     case y => y
   }
 
+  def apply(terms: List[Term]): List[Term] = terms map apply
+
+  def subPred(predicate: Struct): Struct = apply(predicate).asInstanceOf[Struct]
+  def subPred(predicates: List[Struct]): List[Struct] = predicates map subPred
+
   def compose(other: Substitution): Substitution
 
   def restrict(vars: Set[Var]): Substitution
