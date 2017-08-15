@@ -6,11 +6,11 @@ object Types {
 
   trait Term extends PrologType
   case class Var(name: String) extends Term with PlList
-  case class Atom(name: String) extends Term
   trait Const extends Term
+  case class Atom(name: String) extends Const
   case class ConstInt(value: Int) extends Const
   case class ConstStr(value: String) extends Const
-  case class Struct(functor: Atom, terms: List[Term]) extends Term with AtomicPred
+  case class Struct(functor: Atom, terms: List[Term]) extends Term
 
 
   //Prolog List
@@ -20,10 +20,8 @@ object Types {
 
   //Predicates
   trait Predicate extends PrologType
-  trait AtomicPred extends Predicate
-  case object True extends AtomicPred
-  case object False extends AtomicPred
-  case class Clause(head: AtomicPred, body: List[Struct]) extends Predicate
+  case class Clause(head: Struct, body: List[Struct]) extends Predicate
+  case class Query(predicates: List[Struct]) extends Predicate
 
 
 

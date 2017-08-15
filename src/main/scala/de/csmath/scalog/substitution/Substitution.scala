@@ -1,9 +1,19 @@
 package de.csmath.scalog.substitution
 
-import de.csmath.scalog.Types.{Term, Var}
+import de.csmath.scalog.Types.{Struct, Term, Var}
 import de.csmath.scalog.AstToProlog._
 
+import scala.collection.immutable.HashMap
+
 trait Substitution {
+
+  def apply(term: Term): Term = term match {
+    case v@Var(x) if mapping.contains(v) =>
+      mapping(v)
+    case s@Struct(functor,terms) =>
+      Struct(functor,terms.map(apply))
+    case y => y
+  }
 
   def compose(other: Substitution): Substitution
 
@@ -21,6 +31,6 @@ object Substitution {
 
   def apply() = new HashMapSubstitution
 
-  def apply(aMap: Map[Var,Term]) = new HashMapSubstitution(aMap)
+  def apply(aMap: Map[Var,Term]) = new HashMapSubstitution(HashMap.empty ++ aMap)
 
 }

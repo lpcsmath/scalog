@@ -6,15 +6,17 @@ import scala.util.parsing.combinator._
 
 class Parser extends RegexParsers {
 
+  def prolog = clause | term
+
   def term = struct | variable | atom | constNumber
 
   def clause = fact | rule
 
-  def variable = """[A-Z_][A-Za-z\d_]*""".r ^^ {
+  def variable = """[A-Z_]\w*""".r ^^ {
     case v => Var(v)
   }
 
-  def atom = """([a-z][A-Za-z\d_]*)""".r ^^ {
+  def atom = """([a-z]\w*)""".r ^^ {
     case a => Atom(a)
   }
 
@@ -69,9 +71,13 @@ class Parser extends RegexParsers {
   }
 
   def query = ":-" ~> repsep(structure,",") <~ "." ^^ {
-    case q => Clause(False,q)
+    case q => Query(q)
   }
 
+}
 
+object Parser {
+
+  def apply() = new Parser
 
 }
