@@ -2,6 +2,7 @@ package de.csmath.scalog
 
 import de.csmath.scalog.Types._
 
+import scala.util.Try
 import scala.util.parsing.combinator._
 
 class Parser extends RegexParsers {
@@ -75,6 +76,15 @@ class Parser extends RegexParsers {
   def query = ":-" ~> repsep(structure,",") <~ "." ^^ {
     case q => Query(q)
   }
+
+  def parseDb(dbString: String): Try[List[Clause]] =
+    Try(parse(database, dbString).get)
+
+  def parseQuery(queryString: String): Try[Query] =
+    Try(parse(query, queryString).get)
+
+  def parseTerm(termString: String): Try[Term] =
+    Try(parse(term, termString).get)
 
 }
 

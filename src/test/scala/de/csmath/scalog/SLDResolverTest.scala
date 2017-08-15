@@ -66,12 +66,12 @@ class SLDResolverTest extends FlatSpec with Matchers {
 
   val parser = Parser()
   def parseDb(dbString: String): List[Clause] =
-    parser.parse(parser.database, dbString).getOrElse(Nil)
+    parser.parseDb(dbString).getOrElse(Nil)
 
   def parseQuery(queryString: String): Query =
-    parser.parse(parser.query, queryString).getOrElse(Query(Nil))
+    parser.parseQuery(queryString).getOrElse(Query(Nil))
 
   def parseTerm(termString: String): Term =
-    parser.parse(parser.term, termString).getOrElse(Atom("nothing"))
+    parser.parseTerm(termString).getOrElse(Atom("nothing"))
 
 }
