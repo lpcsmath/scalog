@@ -18,21 +18,21 @@ class UnifierTest extends FlatSpec with Matchers {
     val plTerm5 = "f(h(b),g(a))"
     val term5 = parse(plTerm5).asInstanceOf[Term]
 
-    val (res1,s1) = Unifier(term1,term2)
-    res1 shouldBe true
+    val s1 = Unifier(term1,term2)
+    s1 shouldBe defined
     s1.get.mapping.get(term1.asInstanceOf[Var]) shouldBe Some(term2)
-    val (res2,s2) = Unifier(term2,term1)
-    res2 shouldBe true
-    s1.get.mapping.get(term1.asInstanceOf[Var]) shouldBe Some(term2)
-    val (res3,_) = Unifier(term2,term3)
-    res3 shouldBe false
-    val (res4,_) = Unifier(term3,term4)
-    res4 shouldBe false
-    val (res5,s5) = Unifier(term4,term5)
-    res5 shouldBe true
+    val s2 = Unifier(term2,term1)
+    s2 shouldBe defined
+    s2.get.mapping.get(term1.asInstanceOf[Var]) shouldBe Some(term2)
+    val s3 = Unifier(term2,term3)
+    s3 shouldBe empty
+    val s4 = Unifier(term3,term4)
+    s4 shouldBe empty
+    val s5 = Unifier(term4,term5)
+    s5 shouldBe defined
     s5.get.mapping.get(term1.asInstanceOf[Var]) shouldBe Some(parse("h(b)"))
-    val (res6,_) = Unifier(term1,term4)
-    res6 shouldBe false
+    val s6 = Unifier(term1,term4)
+    s6 shouldBe empty
   }
 
   it should "unify predicates" in {
@@ -45,20 +45,20 @@ class UnifierTest extends FlatSpec with Matchers {
     val plPred4 = "abc(5,Y,X)"
     val pred4 = parse(plPred4).asInstanceOf[Term]
 
-    val (res1,s1) = Unifier(pred1,pred2)
-    res1 shouldBe true
+    val s1 = Unifier(pred1,pred2)
+    s1 shouldBe defined
     s1.get.mapping should have size 3
     s1.get.mapping.get(Var("X")) shouldBe Some(Atom("a"))
     s1.get.mapping.get(Var("Y")) shouldBe Some(Atom("b"))
     s1.get.mapping.get(Var("Z")) shouldBe Some(Atom("c"))
-    val (res2,s2) = Unifier(pred1,pred3)
-    res2 shouldBe true
+    val s2 = Unifier(pred1,pred3)
+    s2 shouldBe defined
     s2.get.mapping should have size 1
     s2.get.mapping.get(Var("Z")) shouldBe Some(Var("X"))
-    val (res3,_) = Unifier(pred2,pred3)
-    res3 shouldBe false
-    val (res4,s4) = Unifier(pred3,pred4)
-    res4 shouldBe true
+    val s3 = Unifier(pred2,pred3)
+    s3 shouldBe empty
+    val s4 = Unifier(pred3,pred4)
+    s4 shouldBe defined
     s4.get.mapping should have size 1
     s4.get.mapping.get(Var("X")) shouldBe Some(ConstInt(5))
 

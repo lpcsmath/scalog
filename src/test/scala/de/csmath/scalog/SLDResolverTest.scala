@@ -1,6 +1,6 @@
 package de.csmath.scalog
 
-import de.csmath.scalog.Types.{Atom, Clause, Query}
+import de.csmath.scalog.Types.{Atom, Clause, Query, Var}
 import org.scalatest.{FlatSpec, Matchers}
 
 class SLDResolverTest extends FlatSpec with Matchers {
@@ -16,17 +16,20 @@ class SLDResolverTest extends FlatSpec with Matchers {
       """.stripMargin
     val db = parseDb(dbString)
 
-    println(db)
-
     val queryString =
       """
         |:- geschwister(klaus,W).
       """.stripMargin
     val query = parseQuery(queryString)
 
-    println(query)
+    val subs = SLDResolver.resolve(query,3)(db)
 
-    println(SLDResolver.resolve(query)(db))
+    subs should have size 2
+    subs.head.mapping should have size 1
+    subs.head.mapping.get(Var("W")) shouldBe Some(Atom("klaus"))
+    subs.tail.head.mapping should have size 1
+    subs.tail.head.mapping.get(Var("W")) shouldBe Some(Atom("klara"))
+
 
 
   }

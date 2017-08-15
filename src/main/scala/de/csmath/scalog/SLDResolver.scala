@@ -5,23 +5,28 @@ import de.csmath.scalog.substitution.Substitution
 
 object SLDResolver {
 
-  def resolve(query: Query)(implicit db: List[Clause]): (Boolean,Substitution) = {
-    val (answer,sub) = resolveAux(query,db)(db,Substitution())
-    (answer,sub.restrict(varsOfQuery(query)))
+  def resolve(query: Query, numAnswers: Int)(implicit db: List[Clause]): List[Substitution] = {
+    val substitutions = resolveAux(query,db,numAnswers)(db,Substitution())
+    substitutions.map(_.restrict(varsOfQuery(query)))
   }
 
-  def resolveAux(query: Query, partDb: List[Clause])(implicit completeDb: List[Clause], sub: Substitution): (Boolean,Substitution) = query match {
-    case Query(Nil) => (true, sub)
-    case Query(_) if partDb.isEmpty => (false, sub)
+  def resolveAux(query: Query, partDb: List[Clause], numAnswers: Int)
+                (implicit completeDb: List[Clause], sub: Substitution): List[Substitution] = query match {
+    case Query(Nil) => List(sub)
+    case Query(_) if partDb.isEmpty => Nil
     case Query(pred :: tail) =>
       val clause = renameVars(partDb.head)
-      val (unified,unifiedSub) = Unifier(pred,clause.head)
-      if (unified) {
+      val unifiedSub = Unifier(pred,clause.head)
+      if (unifiedSub.isDefined) {
         val newSub = unifiedSub.get compose sub
         val newQuery = Query(newSub.subPred(clause.body) ++ newSub.subPred(tail))
-        resolveAux(newQuery, completeDb)(completeDb,newSub)
+        val subs = resolveAux(newQuery, completeDb, numAnswers)(completeDb,newSub)
+        if (subs.size >= numAnswers)
+          subs
+        else
+          subs ++ resolveAux(query, partDb.tail, subs.size - numAnswers)
       } else {
-        resolveAux(query, partDb.tail)
+        resolveAux(query, partDb.tail, numAnswers)
       }
   }
 
