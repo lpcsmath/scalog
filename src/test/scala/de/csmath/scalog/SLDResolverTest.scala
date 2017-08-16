@@ -81,6 +81,15 @@ class SLDResolverTest extends FlatSpec with Matchers {
     subs4.head.mapping should have size 1
     subs4.head.mapping.get(Var("X")) shouldBe Some(parseTerm("[1,2,3,4]"))
 
+    val query5String =
+      """
+        |:- append(X,Y,[1,2,3,4]).
+      """.stripMargin
+
+    val subs5 = SLDResolver().resolve(parseQuery(query5String),5)(db3)
+
+    subs5 foreach println
+
 
   }
 

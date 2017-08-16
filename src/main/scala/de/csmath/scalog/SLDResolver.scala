@@ -26,7 +26,7 @@ class SLDResolver {
         if (subs.size >= numAnswers)
           subs
         else
-          subs ++ resolveAux(query, partDb.tail, subs.size - numAnswers)
+          subs ++ resolveAux(query, partDb.tail, numAnswers - subs.size)
       } else {
         resolveAux(query, partDb.tail, numAnswers)
       }
