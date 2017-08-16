@@ -5,7 +5,7 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class SLDResolverTest extends FlatSpec with Matchers {
 
-  "An SLDResolver" should "resolve a true Query" in {
+  "An SLDResolver" should "resolve a simple Query" in {
 
     val dbString =
       """
@@ -22,7 +22,7 @@ class SLDResolverTest extends FlatSpec with Matchers {
       """.stripMargin
     val query = parseQuery(queryString)
 
-    val subs = SLDResolver().resolve(query,3)(db)
+    val subs = SLDResolver().resolve(query, 3)(db)
 
     subs should have size 2
     subs.head.mapping should have size 1
@@ -43,7 +43,7 @@ class SLDResolverTest extends FlatSpec with Matchers {
       """.stripMargin
     val query2 = parseQuery(query2String)
 
-    val subs2 = SLDResolver().resolve(query2,1)(db2)
+    val subs2 = SLDResolver().resolve(query2, 1)(db2)
 
     subs2 should have size 1
     subs2.head.mapping should have size 1
@@ -55,12 +55,15 @@ class SLDResolverTest extends FlatSpec with Matchers {
       """.stripMargin
     val query3 = parseQuery(query3String)
 
-    val subs3 = SLDResolver().resolve(query3,1)(db2)
+    val subs3 = SLDResolver().resolve(query3, 1)(db2)
 
     subs3 should have size 1
     subs3.head.mapping should have size 1
     subs3.head.mapping.get(Var("X")) shouldBe Some(parseTerm("succ(succ(zero))"))
 
+  }
+
+  it should "work with lists" in {
 
     val db3String =
       """
@@ -86,10 +89,32 @@ class SLDResolverTest extends FlatSpec with Matchers {
         |:- append(X,Y,[1,2,3,4]).
       """.stripMargin
 
-    val subs5 = SLDResolver().resolve(parseQuery(query5String),5)(db3)
+    val subs5 = SLDResolver().resolve(parseQuery(query5String),10)(db3)
 
-    subs5 foreach println
+    subs5 should have size 5
 
+  }
+
+  it should "generate permutations" in {
+
+    val db3String =
+      """
+        |permutation([],[]).
+        |permutation(L,[E|R]) :- scratch(E,L,L2), permutation(L2,R).
+        |scratch(E,[E|R],R).
+        |scratch(E,[F|R],[F|Rwo]) :- scratch(E,R,Rwo).
+      """.stripMargin
+    val db3 = parseDb(db3String)
+
+    val query4String =
+      """
+        |:- permutation([1,2,3,4],X).
+      """.stripMargin
+    val query4 = parseQuery(query4String)
+
+    val subs4 = SLDResolver().resolve(query4,30)(db3)
+
+    subs4 should have size 24
 
   }
 
