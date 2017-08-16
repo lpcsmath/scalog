@@ -118,6 +118,39 @@ class SLDResolverTest extends FlatSpec with Matchers {
 
   }
 
+  it should "offer to call for backtracking" in {
+
+    val resolver = SLDResolver()
+
+    val dbString =
+      """
+        |permutation([],[]).
+        |permutation(L,[E|R]) :- scratch(E,L,L2), permutation(L2,R).
+        |scratch(E,[E|R],R).
+        |scratch(E,[F|R],[F|Rwo]) :- scratch(E,R,Rwo).
+      """.stripMargin
+    val db = parseDb(dbString)
+
+    val queryString =
+      """
+        |:- permutation([1,2,3,4],X).
+      """.stripMargin
+    val query = parseQuery(queryString)
+
+    var subs = resolver.resolve(query)(db)
+
+    var numSolutions = 0
+
+    while (subs.nonEmpty) {
+      numSolutions += 1
+      subs = resolver.backTrack()
+    }
+
+    numSolutions shouldBe 24
+
+
+  }
+
   val parser = Parser()
   def parseDb(dbString: String): List[Clause] =
     parser.parseDb(dbString).getOrElse(Nil)

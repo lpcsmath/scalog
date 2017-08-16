@@ -5,15 +5,25 @@ import de.csmath.scalog.substitution.Substitution
 
 class SLDResolver {
 
+  type State = (Query,List[Clause],Substitution)
+
   var renNum = 10
 
-  def resolve(query: Query, numAnswers: Int)(implicit db: List[Clause]): List[Substitution] = {
+  var stack = List.empty[State]
+
+  var prog: List[Clause] = _
+
+  var answerVars: Set[Var] = _
+
+  def resolve(query: Query, numAnswers: Int = -1)(implicit db: List[Clause]): List[Substitution] = {
+    prog = db
     val substitutions = resolveAux(query,db,numAnswers)(db,Substitution())
-    substitutions.map(_.restrict(varsOfQuery(query)))
+    answerVars = varsOfQuery(query)
+    substitutions.map(_.restrict(answerVars))
   }
 
-  def resolveAux(query: Query, partDb: List[Clause], numAnswers: Int)
-                (implicit completeDb: List[Clause], sub: Substitution): List[Substitution] = query match {
+  private def resolveAux(query: Query, partDb: List[Clause], numAnswers: Int)
+                        (implicit completeDb: List[Clause], sub: Substitution): List[Substitution] = query match {
     case Query(Nil) => List(sub)
     case Query(_) if partDb.isEmpty => Nil
     case Query(pred :: tail) =>
@@ -23,13 +33,26 @@ class SLDResolver {
         val newSub = unifiedSub.get compose sub
         val newQuery = Query(newSub.subPred(clause.body) ++ newSub.subPred(tail))
         val subs = resolveAux(newQuery, completeDb, numAnswers)(completeDb,newSub)
-        if (subs.size >= numAnswers)
+        if (numAnswers < 0) {
+          // backtracking
+          stack = (query,partDb.tail,sub) :: stack
+          subs
+        } else if (subs.size >= numAnswers)
           subs
         else
           subs ++ resolveAux(query, partDb.tail, numAnswers - subs.size)
       } else {
         resolveAux(query, partDb.tail, numAnswers)
       }
+  }
+
+  def backTrack(): List[Substitution] = stack match {
+    case Nil => Nil
+    case (query,partDb,sub) :: tail =>
+      stack = tail
+      val subs = resolveAux(query,partDb,-1)(prog,sub)
+      if (subs.isEmpty) backTrack()
+      else subs.map(_.restrict(answerVars))
   }
 
   private def renameVars(clause: Clause): Clause = {

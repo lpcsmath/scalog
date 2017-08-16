@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a4b594-ca94-45c3-9008-afcc7b0cd688" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala" afterPath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,8 +67,8 @@
       <file leaf-file-name="SLDResolver.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="28" column="71" lean-forward="false" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+            <state relative-caret-position="270">
+              <caret line="54" column="11" lean-forward="false" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
               <folding>
                 <element signature="e#26#57#0" expanded="true" />
               </folding>
@@ -78,8 +79,8 @@
       <file leaf-file-name="SLDResolverTest.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-45">
-              <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
+            <state relative-caret-position="654">
+              <caret line="148" column="28" lean-forward="false" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
               <folding>
                 <element signature="e#26#57#0" expanded="true" />
               </folding>
@@ -553,44 +554,44 @@
       <updated>1502734047534</updated>
       <workItem from="1502734049322" duration="3450000" />
       <workItem from="1502737641892" duration="41569000" />
-      <workItem from="1502900800258" duration="2480000" />
+      <workItem from="1502900800258" duration="5419000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SLDResolverTest - 2017.08.16 at 18h 33m 41s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 03m 13s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 18h 35m 35s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 05m 17s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 18h 35m 50s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 09m 33s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 18h 36m 05s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 10m 29s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 18h 55m 33s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 13m 01s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 18h 56m 01s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 13m 08s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 19h 10m 34s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 15m 33s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 19h 11m 23s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 17m 29s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 19h 11m 38s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 20m 04s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 19h 12m 03s.xml">
+    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 21m 16s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47499000" />
+    <option name="totallyTimeSpent" value="50438000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,13 +678,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
-          <url>file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala</url>
-          <line>80</line>
+          <url>file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala</url>
+          <line>49</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -923,8 +924,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/SLDResolver.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="28" column="71" lean-forward="false" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
+        <state relative-caret-position="270">
+          <caret line="54" column="11" lean-forward="false" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
           <folding>
             <element signature="e#26#57#0" expanded="true" />
           </folding>
@@ -933,8 +934,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/SLDResolverTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-45">
-          <caret line="91" column="65" lean-forward="false" selection-start-line="91" selection-start-column="65" selection-end-line="91" selection-end-column="65" />
+        <state relative-caret-position="654">
+          <caret line="148" column="28" lean-forward="false" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
           <folding>
             <element signature="e#26#57#0" expanded="true" />
           </folding>
