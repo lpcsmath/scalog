@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a4b594-ca94-45c3-9008-afcc7b0cd688" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" afterPath="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -84,11 +83,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AstToProlog.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AstToProlog.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/AstToProlog.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnifierTest.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -154,8 +163,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>+</find>
-      <find>asI</find>
       <find>asIn</find>
+      <find>asI</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,7 +185,6 @@
         <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/substitution/SubstitutionTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Types.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/HashMapSubstitution.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Parser.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/Substitution.scala" />
@@ -185,6 +193,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.scala" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/scala/de/csmath/scalog/Unifier.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala" />
       </list>
     </option>
   </component>
@@ -321,7 +330,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="ScalaTest.SLDResolverTest">
+  <component name="RunManager" selected="ScalaTest.UnifierTest">
     <configuration name="ParserTest" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="scalog" />
@@ -482,8 +491,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.SLDResolverTest" />
-        <item index="1" class="java.lang.String" itemvalue="ScalaTest.UnifierTest" />
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.UnifierTest" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.SLDResolverTest" />
         <item index="2" class="java.lang.String" itemvalue="ScalaTest.SubstitutionTest" />
         <item index="3" class="java.lang.String" itemvalue="ScalaTest.ParserTest" />
       </list>
@@ -536,32 +545,11 @@
       <workItem from="1502737641892" duration="41569000" />
       <workItem from="1502900800258" duration="6773000" />
       <workItem from="1502993528336" duration="1382000" />
-      <workItem from="1503233742760" duration="552000" />
+      <workItem from="1503233742760" duration="2841000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 05m 17s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 09m 33s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 10m 29s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 13m 01s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 13m 08s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 15m 33s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="SLDResolverTest - 2017.08.16 at 21h 17m 29s.xml">
-      <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="SLDResolverTest - 2017.08.16 at 21h 20m 04s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -571,9 +559,30 @@
     <history-entry file="SLDResolverTest - 2017.08.20 at 15h 03m 04s.xml">
       <configuration name="SLDResolverTest" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 11m 18s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 12m 12s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 12m 42s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 14m 10s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 15m 07s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 15m 26s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="UnifierTest - 2017.08.20 at 16h 15m 44s.xml">
+      <configuration name="UnifierTest" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53726000" />
+    <option name="totallyTimeSpent" value="56015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -598,7 +607,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5049261" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.49507388" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32994923" sideWeight="0.49507388" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -902,13 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/de/csmath/scalog/substitution/HashMapSubstitution.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1010,6 +1012,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/de/csmath/scalog/UnifierTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="58" column="59" lean-forward="false" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
           <folding />
         </state>
       </provider>
